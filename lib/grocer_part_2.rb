@@ -1,9 +1,16 @@
 require_relative './part_1_solution.rb'
+require 'pry'
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+ new_array = []
+ cart.each do |things|
+    coupons.each do |coupon_item| 
+      if cart.include?(coupon_item[:item]) == false
+        new_array.push(things)
+      end
+    end
+  end
+  new_array
 end
 
 def apply_clearance(cart)
